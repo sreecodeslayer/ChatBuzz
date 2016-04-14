@@ -1,8 +1,9 @@
+
 body {
     padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
     background-size: cover;
-    background: url("../images/ChatBuzz-bg.png") no-repeat left top;
+    background: url("../images/ChatBuzz-bg.png") repeat left top;
 }
 
 h1 {
@@ -13,30 +14,147 @@ a {
     color: #00B7FF;
 }
 
-.container {
-    margin: 150px auto;
+.login_container, .register_container {
+    margin: 100px auto;
     width: 640px;
 }
 
-.login {
+.login, .register {
     position: relative;
     margin: 0 auto;
     padding: 20px 20px 20px;
     width: 400px;
     background: white;
     border-radius: 3px;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.26);
+    box-shadow: 0 50px 30px 0 rgba(0, 0, 0, 0.26);
 }
 
 #main_icon {
     background-image: url("../images/ChatBuzz-main-icon.png");
 }
 
-#input_box {
-    width: 70%;
-    height: 30px;
-    padding: 5px;
+.group {
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 45px;
 }
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 300px;
+}
+
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+/* others here */
 
 .remember_me {
     float: left;
@@ -72,6 +190,7 @@ a {
 .button.blue {
     background-color: #44cfdc;
     color: #fff;
+    margin-left: 25px;
     text-align: center;
     cursor: hand;
 }

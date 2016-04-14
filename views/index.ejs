@@ -3,6 +3,46 @@
 <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
 <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
 <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".register_container").hide();
+
+        $("#reg_button").click(function () {
+            $(".login_container").hide();
+            $(".register_container").show();
+        });
+        $("#go_to_login").click(function () {
+            $(".register_container").hide();
+            $(".login_container").show();
+            $('html, body').animate({scrollTop:0});
+        });
+    });
+
+
+    function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function () {
+                if (oldonload) {
+                    oldonload();
+                }
+                func();
+            }
+        }
+    }
+    var password = document.getElementById("reg_password")
+            , confirm_password = document.getElementById("confirm_reg_password");
+    addLoadEvent(function () {
+        if (password.value != confirm_password.value) {
+            document.getElementById("validity_label").innerHTML = "Passwords Don't Match";
+        } else {
+            document.getElementById("validity_label").innerHTML = "";
+        }
+    });
+</script>
 <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
@@ -10,25 +50,87 @@
 <body>
 <h1><%= title %></h1>
 <p>Welcome to <%= title %></p>
-<section class="container">
+
+<!-- LOGIN SECTION -->
+
+<section class="login_container">
     <div class="login">
         <h1>Login to ChatBuzz</h1>
         <form method="post" action="index.html">
-            <input id="input_box" type="text" name="login" value="" placeholder="Username or Email"><br>
-            <input id="input_box" type="password" name="password" value="" placeholder="Password"><br>
-            <p class="remember_me">
-                <label>
-                    <input type="checkbox" name="remember_me" id="remember_me">
-                    Remember me on this computer
-                </label>
-            </p>
+            <div class="group">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Username</label>
+            </div>
+            <div class="group">
+                <input type="password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password</label>
+            </div>
             <div class="button raised blue">
                 <div class="center" fit>LOGIN</div>
+                <paper-ripple fit></paper-ripple>
+            </div>
+            <div class="button raised blue">
+                <div class="center" id="reg_button" fit>REGISTER</div>
                 <paper-ripple fit></paper-ripple>
             </div>
         </form>
     </div>
 </section>
 
+<!-- REGISTER SECTION -->
+
+<section class="register_container">
+    <div class="register">
+        <h1>Register to ChatBuzz</h1>
+        <form method="post" action="index.html">
+            <div class="group">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Name</label>
+            </div>
+
+            <div class="group">
+                <input type="text" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Username</label>
+            </div>
+
+            <div class="group">
+                <input type="tel" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Mobile</label>
+            </div>
+            <div class="group">
+                <input type="password" id="reg_password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password</label>
+            </div>
+
+            <div class="group">
+                <input type="password" id="confirm_reg_password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Confirm Password</label>
+            </div>
+            <label id="validity_label"></label>
+            <div class="button raised blue">
+                <div class="center" id="go_to_login" fit>◄</div>
+                <paper-ripple fit></paper-ripple>
+            </div>
+            <div class="button raised blue">
+                <div class="center" fit>REGISTER</div>
+                <paper-ripple fit></paper-ripple>
+            </div>
+        </form>
+    </div>
+</section>
 </body>
 </html>
