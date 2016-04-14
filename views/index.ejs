@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
+<link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+<link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+<section class="container">
+    <div class="login">
+        <h1>Login to ChatBuzz</h1>
+        <form method="post" action="index.html">
+            <input id="input_box" type="text" name="login" value="" placeholder="Username or Email"><br>
+            <input id="input_box" type="password" name="password" value="" placeholder="Password"><br>
+            <p class="remember_me">
+                <label>
+                    <input type="checkbox" name="remember_me" id="remember_me">
+                    Remember me on this computer
+                </label>
+            </p>
+            <div class="button raised blue">
+                <div class="center" fit>LOGIN</div>
+                <paper-ripple fit></paper-ripple>
+            </div>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

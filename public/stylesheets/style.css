@@ -1,0 +1,88 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-size: cover;
+    background: url("../images/ChatBuzz-bg.png") no-repeat left top;
+}
+
+h1 {
+    color: #44cfdc;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.container {
+    margin: 150px auto;
+    width: 640px;
+}
+
+.login {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 20px 20px;
+    width: 400px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+#main_icon {
+    background-image: url("../images/ChatBuzz-main-icon.png");
+}
+
+#input_box {
+    width: 70%;
+    height: 30px;
+    padding: 5px;
+}
+
+.remember_me {
+    float: left;
+    line-height: 31px;
+    cursor: hand;
+}
+
+.remember_me.label {
+    font-size: 12px;
+    color: #777;
+    cursor: hand;
+}
+
+.remember_me.input {
+    position: relative;
+    bottom: 1px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.button {
+    margin-top: 5%;
+    display: inline-block;
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    font-size: 0.9em;
+    background-color: #fff;
+    color: #646464;
+}
+
+.button.blue {
+    background-color: #44cfdc;
+    color: #fff;
+    text-align: center;
+    cursor: hand;
+}
+
+.button.raised {
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.button.raised:active {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    transition-delay: 0s;
+}
