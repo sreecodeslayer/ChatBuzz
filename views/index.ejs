@@ -15,7 +15,7 @@
         $("#go_to_login").click(function () {
             $(".register_container").hide();
             $(".login_container").show();
-            $('html, body').animate({scrollTop:0});
+            $('html, body').animate({scrollTop: 0});
         });
     });
 
@@ -88,34 +88,34 @@
         <h1>Register to ChatBuzz</h1>
         <form method="post" action="index.html">
             <div class="group">
-                <input type="text" required>
+                <input type="text" name="name" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Name</label>
             </div>
 
             <div class="group">
-                <input type="text" required>
+                <input type="text" name="username" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Username</label>
             </div>
 
             <div class="group">
-                <input type="tel" required>
+                <input type="tel" name="mobile" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Mobile</label>
             </div>
             <div class="group">
-                <input type="password" id="reg_password" required>
+                <input type="password" id="reg_password" name="password" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Password</label>
             </div>
 
             <div class="group">
-                <input type="password" id="confirm_reg_password" required>
+                <input type="password" id="confirm_reg_password" name="confirm_password" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Confirm Password</label>
