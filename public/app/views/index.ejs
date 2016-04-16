@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ChatBuzz">
 <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
 <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
 <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript">
     $(document).ready(function () {
         $(".register_container").hide();
 
@@ -18,7 +20,6 @@
             $('html, body').animate({scrollTop: 0});
         });
     });
-
 
     function addLoadEvent(func) {
         var oldonload = window.onload;

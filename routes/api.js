@@ -91,7 +91,7 @@ module.exports = function (app, express) {
      * Middleware to check the user token
      ++++++++++++++++++++++++++++++++++++*/
 
-    app.use(function (req, res, next) {
+    api.use(function (req, res, next) {
 
         console.log("Someone just asked for Buzz token");
         var token = req.body.token || req.param('token') || req.headers['x-access-token'];
@@ -116,6 +116,26 @@ module.exports = function (app, express) {
                 message: "Well, that's a bummer, couldn't authenticate you!"
             });
         }
+    });
+
+
+    /*+++++++++++++++++++++
+     * TESTING THE MIDDLEWARE
+     +++++++++++++++++++++*/
+
+    api.get('/', function (req, res) {
+        res.json("Hello buzzer!");
+    });
+
+
+    /*+++++++++++++++++++++++++++++++++++++
+     * FETCH USER DATA FROM MIDDLEWARE ABOVE
+     ++++++++++++++++++++++++++++++++++++*/
+
+    api.get('/me', function (req, res) {
+
+        res.json(req.decoded);
+
     });
 
     return api; // testing api
